@@ -35,6 +35,9 @@
                                     <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z12-gh-H0a"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zok-Gy-NAW">
                                 <rect key="frame" x="77" y="668" width="115" height="50"/>
@@ -48,6 +51,9 @@
                                     <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="restartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y19-OX-OmV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDW-W5-MBq">
                                 <rect key="frame" x="222" y="668" width="115" height="50"/>
@@ -61,6 +67,9 @@
                                     <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="yD6-0K-edI" kind="presentation" id="qK1-VZ-vzV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -76,10 +85,64 @@
                             <constraint firstItem="nDW-W5-MBq" firstAttribute="trailing" secondItem="1yx-9n-gNx" secondAttribute="trailing" id="weD-vh-0g3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="Iaz-fr-trv" id="azg-Cn-B97"/>
+                        <outletCollection property="buttons" destination="1yx-9n-gNx" collectionClass="NSMutableArray" id="IQY-1T-txH"/>
+                        <outletCollection property="buttons" destination="zok-Gy-NAW" collectionClass="NSMutableArray" id="6H4-s4-KQ7"/>
+                        <outletCollection property="buttons" destination="nDW-W5-MBq" collectionClass="NSMutableArray" id="PhU-SL-hrt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="84"/>
+            <point key="canvasLocation" x="-632" y="120"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IyQ-Fs-aIY">
+            <objects>
+                <viewController id="yD6-0K-edI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FaE-tv-Tbp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqy-jF-F7R">
+                                <rect key="frame" x="30" y="70" width="354" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The value of each card represents the number of exercise you do.  J = 11, Q = 12, K = 13, A = 14" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iq-YZ-ecn">
+                                <rect key="frame" x="30" y="138" width="354" height="86"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♠️ = Push-up  ❤️ = Sit-up  ♣️ = Burpees  ♦️ = Jumping Jacks" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mll-yi-0Od">
+                                <rect key="frame" x="107" y="299" width="200" height="175.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="N65-8L-C4H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="miC-dG-EjP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mll-yi-0Od" firstAttribute="top" secondItem="6iq-YZ-ecn" secondAttribute="bottom" constant="75" id="27j-FK-PcN"/>
+                            <constraint firstItem="Dqy-jF-F7R" firstAttribute="leading" secondItem="miC-dG-EjP" secondAttribute="leading" constant="30" id="FUH-9p-X9g"/>
+                            <constraint firstItem="6iq-YZ-ecn" firstAttribute="leading" secondItem="miC-dG-EjP" secondAttribute="leading" constant="30" id="Rco-fA-NkS"/>
+                            <constraint firstItem="Dqy-jF-F7R" firstAttribute="top" secondItem="miC-dG-EjP" secondAttribute="top" constant="70" id="VwS-Bf-8yJ"/>
+                            <constraint firstItem="miC-dG-EjP" firstAttribute="trailing" secondItem="6iq-YZ-ecn" secondAttribute="trailing" constant="30" id="hTw-EW-ver"/>
+                            <constraint firstItem="Mll-yi-0Od" firstAttribute="centerX" secondItem="FaE-tv-Tbp" secondAttribute="centerX" id="nUz-Na-YVW"/>
+                            <constraint firstItem="6iq-YZ-ecn" firstAttribute="top" secondItem="Dqy-jF-F7R" secondAttribute="bottom" constant="20" id="nYr-VD-46W"/>
+                            <constraint firstItem="miC-dG-EjP" firstAttribute="trailing" secondItem="Dqy-jF-F7R" secondAttribute="trailing" constant="30" id="quk-ih-L02"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8L1-YJ-bvE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="120"/>
         </scene>
     </scenes>
     <resources>
